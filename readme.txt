@@ -3,22 +3,46 @@ Contributors: iamthechad
 Donate link: http://www.megatome.com/
 Tags: highlight, code, syntax, code highlight
 Requires at least: 2.7.1
-Tested up to: 2.8.5
-Stable tag: 1.0
+Tested up to: 3.0.1
+Stable tag: 2.0
 
 Provides a simple way to use the Syntax Highlighter tool from http://alexgorbatchev.com/wiki/SyntaxHighlighter
 
 == Description ==
 
-This plugin works like many of the others that enable the use of the Syntax Highlighter tool. The main difference
-this plugin has is that you can disable any of the code styling JavaScript files that you are not using in order to
-reduce page loading sizes and times.
+This plugin works like many of the others that enable the use of the Syntax Highlighter tool. Dynamic plugin loading
+is now available as part of the Syntax Highlighter tool, making plugin configuration obsolete.
+
+Available brushes are:
+`applescript
+actionscript3 as3
+bash shell
+coldfusion cf
+cpp c
+c# c-sharp csharp
+css
+delphi pascal
+diff patch pas
+erl erlang
+groovy
+java
+jfx javafx
+js jscript javascript
+perl pl
+php
+text plain
+py python
+ruby rails ror rb
+sass scss
+scala
+sql
+vb vbnet
+xml xhtml xslt html`
 
 == Installation ==
 
 1. Unzip the `syntax-highlighter-mt` directory and upload it to `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Using the Settings menu, make any desired changes to the plugin's behavior.
 
 == Frequently Asked Questions ==
 
@@ -29,7 +53,7 @@ Basic usage is similar to: `<pre class="brush:php">...PHP code...</pre>`
 
 = I get an error saying "Can't find brush for: xxx" =
 
-The most likely issue is that you have disabled the brush required to show the type of code specified in the `<pre>` tag. Go to 'Settings' -> 'Syntax Highlighter' to verify the correct brush is enabled.
+The most likely issue is that the specified brush is not available as part of the plugin install. 
 
 = Why "Syntax Highlighter MT"? =
 
@@ -37,10 +61,18 @@ There are several plugins already that are named Syntax Highlighter, or some var
 
 == Screenshots ==
 
-1. Brush options.
-2. Styled Groovy code.
+1. Styled Groovy code.
 
 == Changelog ==
 
+= 2.0 =
+* Incorporate Syntax Highlighter 3.0.83
+* Remove option page for enabled brushes since the Syntax Highlighter tool now uses dynamic loading
+
 = 1.0 =
 * Initial Version
+
+== Upgrade Notice ==
+
+This version has been tested with recent WordPress versions, and uses the most recent Syntax Highlighter version. Users
+should upgrade if these features are desired.
