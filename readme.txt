@@ -1,17 +1,17 @@
 === Plugin Name ===
 Contributors: iamthechad
-Donate link: http://www.megatome.com/
+Donate link: http://www.megatome.com/syntaxhighlighter/
 Tags: highlight, code, syntax, code highlight
 Requires at least: 2.7.1
-Tested up to: 3.1.3
-Stable tag: 2.0.1
+Tested up to: 3.2.1
+Stable tag: 2.1
 
 Provides a simple way to use the Syntax Highlighter tool from http://alexgorbatchev.com/wiki/SyntaxHighlighter
 
 == Description ==
 
 This plugin works like many of the others that enable the use of the Syntax Highlighter tool. Dynamic plugin loading
-is now available as part of the Syntax Highlighter tool, making plugin configuration obsolete.
+is now available as part of the Syntax Highlighter tool, making brush configuration obsolete.
 
 Available brushes are:
 `applescript
@@ -51,6 +51,11 @@ xml xhtml xslt html`
 Take a look at [http://alexgorbatchev.com/wiki/SyntaxHighlighter](http://alexgorbatchev.com/wiki/SyntaxHighlighter) for the documentation on using the Syntax Highlighter tool.
 Basic usage is similar to: `<pre class="brush:php">...PHP code...</pre>`
 
+= Why does my content containing “<” and “>” get messed up? =
+This is an issue with using the `<pre />` tags. Replace the `<` characters with their entity escape of `&lt;` to get the desired result.
+See http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html for more discussion.
+(Note that this issue only happens if you are using the `<pre />` tags to surround the highlighted code.)
+
 = I get an error saying "Can't find brush for: xxx" =
 
 The most likely issue is that the specified brush is not available as part of the plugin install. 
@@ -62,11 +67,16 @@ There are several plugins already that are named Syntax Highlighter, or some var
 == Screenshots ==
 
 1. Styled Groovy code.
+2. Styled Groovy code using the Django theme.
+3. Styled Groovy code using the FadeToGrey theme.
 
 == Changelog ==
 
+= 2.1 =
+* Added ability to select coloration theme. This is a global setting.
+
 = 2.0.1 =
-* No functional changes. Just updating the compatible WP version numbers ot be the most recent.
+* No functional changes. Just updating the compatible WP version numbers to be the most recent.
 
 = 2.0 =
 * Incorporate Syntax Highlighter 3.0.83
