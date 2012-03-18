@@ -71,8 +71,8 @@ There are several plugins already that are named Syntax Highlighter, or some var
 ## Screenshots
 
 1. Styled Groovy code.
-![Styled Groovy Code](screenshot-1.png "Styled Groovy Code")
+![Styled Groovy Code](https://github.com/iamthechad/syntaxhighlightermt/blob/master/screenshot-1.png "Styled Groovy Code")
 2. Styled Groovy code using the Django theme.
-![Styled Groovy Code using the Django theme](screenshot-2.png "Styled Groovy Code using the Django theme")
+![Styled Groovy Code using the Django theme](https://github.com/iamthechad/syntaxhighlightermt/blob/master/screenshot-1.png "Styled Groovy Code using the Django theme")
 3. Styled Groovy code using the FadeToGrey theme.
-![Styled Groovy Code usin gthe FadeToGrey theme](screenshot-3.png "Styled Groovy Code using the FadeToGrey theme")
+![Styled Groovy Code usin gthe FadeToGrey theme](https://github.com/iamthechad/syntaxhighlightermt/blob/master/screenshot-1.png "Styled Groovy Code using the FadeToGrey theme")
