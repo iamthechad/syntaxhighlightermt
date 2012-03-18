@@ -3,8 +3,8 @@ Contributors: iamthechad
 Donate link: http://www.megatome.com/syntaxhighlighter/
 Tags: highlight, code, syntax, code highlight
 Requires at least: 2.7.1
-Tested up to: 3.2.1
-Stable tag: 2.1
+Tested up to: 3.3.1
+Stable tag: 2.2
 
 Provides a simple way to use the Syntax Highlighter tool from http://alexgorbatchev.com/wiki/SyntaxHighlighter
 
@@ -28,6 +28,7 @@ groovy
 java
 jfx javafx
 js jscript javascript
+objc obj-c
 perl pl
 php
 text plain
@@ -71,6 +72,9 @@ There are several plugins already that are named Syntax Highlighter, or some var
 3. Styled Groovy code using the FadeToGrey theme.
 
 == Changelog ==
+
+= 2.2 =
+* Added Objective C brush.
 
 = 2.1 =
 * Added ability to select coloration theme. This is a global setting.

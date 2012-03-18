@@ -1,6 +1,6 @@
 <?php
 /*
-    Copyright (C) 2011  Megatome Technologies
+    Copyright (C) 2012  Megatome Technologies
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 Plugin Name: Syntax Highlighter MT
 Plugin URI: http://www.megatome.com/syntaxhighlighter
 Description: Provides a simple way to use the Syntax Highlighter tool from <a href="http://alexgorbatchev.com/wiki/SyntaxHighlighter">http://alexgorbatchev.com/wiki/SyntaxHighlighter</a>
-Version: 2.1
+Version: 2.2
 Author: Chad Johnston
 Author URI: http://www.megatome.com
 */
@@ -80,6 +80,7 @@ function mtsh_write_footer()
       'java                   $x/scripts/shBrushJava.js',
       'jfx javafx             $x/scripts/shBrushJavaFX.js',
       'js jscript javascript  $x/scripts/shBrushJScript.js',
+      'objc obj-c             $x/scripts/shBrushObjectiveC.js',
       'perl pl                $x/scripts/shBrushPerl.js',
       'php                    $x/scripts/shBrushPhp.js',
       'text plain             $x/scripts/shBrushPlain.js',
