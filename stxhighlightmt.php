@@ -19,7 +19,7 @@
 Plugin Name: Syntax Highlighter MT
 Plugin URI: http://www.megatome.com/syntaxhighlighter
 Description: Provides a simple way to use the Syntax Highlighter tool from <a href="http://alexgorbatchev.com/wiki/SyntaxHighlighter">http://alexgorbatchev.com/wiki/SyntaxHighlighter</a>
-Version: 2.2.1
+Version: 2.5
 Author: Chad Johnston
 Author URI: http://www.megatome.com
 */
@@ -33,6 +33,9 @@ $themes = array(
     "MDUltra" => "shThemeMDUltra.css",
     "Midnight" => "shThemeMidnight.css",
     "RDark" => "shThemeRDark.css");
+
+$shmt_shortcode_matches = array();
+$shmt_shortcode_hash = md5(rand(0,1000));
 
 register_activation_hook(__FILE__, 'add_defaults_fn');
 // Define default option settings
@@ -77,12 +80,14 @@ function mtsh_write_footer()
       'diff patch pas         $x/scripts/shBrushDiff.js',
       'erl erlang             $x/scripts/shBrushErlang.js',
       'groovy                 $x/scripts/shBrushGroovy.js',
+      'hive                   $x/scripts/shBrushHive.js',
       'java                   $x/scripts/shBrushJava.js',
       'jfx javafx             $x/scripts/shBrushJavaFX.js',
       'js jscript javascript  $x/scripts/shBrushJScript.js',
       'objc obj-c             $x/scripts/shBrushObjectiveC.js',
       'perl pl                $x/scripts/shBrushPerl.js',
       'php                    $x/scripts/shBrushPhp.js',
+      'pig                    $x/scripts/shBrushPig.js',
       'text plain             $x/scripts/shBrushPlain.js',
       'py python              $x/scripts/shBrushPython.js',
       'ruby rails ror rb      $x/scripts/shBrushRuby.js',
@@ -145,6 +150,77 @@ function  mtsh_settings_theme_dropdown() {
 		echo "<option value='$k' $selected>$k</option>";
 	}
 	echo "</select>";
+}
+
+// Add Shortcode
+/*function shmt_shortcode( $atts , $content = null ) {
+
+    // Attributes
+    extract( shortcode_atts(
+            array(
+                'brush' => 'html',
+                'auto_links' => 'true',
+                'class_name' => '',
+                'collapse' => 'false',
+                'first_line' => 1,
+                'gutter' =>	'true',
+                'highlight' => '',
+                'html_script' => 'false',
+                'smart_tabs' => 'true',
+                'tab_size' => '4',
+                'toolbar' => 'true',
+                'title' => ''
+            ), $atts )
+    );
+
+    $tag = '<pre class="brush:' . $brush . '">' . $content . '</pre>';
+    // Code
+    return $tag;
+
+}*/
+//add_shortcode( 'shmt', 'shmt_shortcode' );
+
+add_filter('the_content', 'shmt_before_format', 7); // 7 is simply a lucky number, nothing more =)
+
+function shmt_build_shortcode_match($match)
+{
+    global $shmt_shortcode_matches, $shmt_shortcode_hash;
+
+    $shmt_shortcode_matches[] = $match[1];
+
+    return "\n<p>" . $shmt_shortcode_hash . sprintf("%03d", sizeof($shmt_shortcode_matches) - 1) . "</p>\n";
+}
+
+function shmt_before_format($content)
+{
+    return preg_replace_callback(
+        "/\[shmt\](.*?)\[\/shmt\]/siu",
+        "shmt_build_shortcode_match",
+        $content
+    );
+}
+
+add_filter('the_content', 'shmt_after_format', 1000); // high enough to make this the last filter ever on the_content()
+
+function shmt_process_shortcode($identifier)
+{
+    global $shmt_shortcode_matches;
+
+    $identifier = (int) $identifier[1];
+    $content = (isset($shmt_shortcode_matches[$identifier])) ? $shmt_shortcode_matches[$identifier] : '';
+
+    return '<pre class="brush:pig">' . $content . '</pre>';
+}
+
+function shmt_after_format($content)
+{
+    global $shmt_shortcode_hash;
+
+    return preg_replace_callback(
+        "/<p>" . $shmt_shortcode_hash . "(\d{3})<\/p>/siu",
+        "shmt_process_shortcode",
+        $content
+    );
 }
 
 ?>
