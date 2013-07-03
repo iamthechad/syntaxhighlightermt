@@ -2,7 +2,7 @@ Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbat
 
 ## Latest Info
 
-* Objective C brush now added.
+* * Added brushes for Pig and Hive QL.
 
 ## Description
 
@@ -22,12 +22,14 @@ Available brushes are:
 * diff patch pas
 * erl erlang
 * groovy
+* hive
 * java
 * jfx javafx
 * js jscript javascript
 * objc obj-c
 * perl pl
 * php
+* pig
 * text plain
 * py python
 * ruby rails ror rb
