@@ -77,7 +77,9 @@ There are several plugins already that are named Syntax Highlighter, or some var
 
 = 2.5 =
 * Added shortcode support.
-* Added Pig and Hive brushes.
+
+= 2.2.2 =
+* Added brushes for Pig and Hive QL.
 
 = 2.2.1 =
 * No functional changes. Just updating the compatible WP version numbers to be the most recent.

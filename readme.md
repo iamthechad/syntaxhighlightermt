@@ -3,7 +3,6 @@ Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbat
 ## Latest Info
 
 * Shortcode support.
-* Pig and Hive brushes now added.
 
 ## Description
 
