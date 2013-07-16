@@ -2,7 +2,7 @@ Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbat
 
 ## Latest Info
 
-* * Added brushes for Pig and Hive QL.
+* Added brushes for Pig and Hive QL.
 
 ## Description
 
