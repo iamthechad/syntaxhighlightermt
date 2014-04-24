@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/iamthechad/syntaxhighlightermt.png?label=ready&title=Ready)](https://waffle.io/iamthechad/syntaxhighlightermt)
 Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbatchev.com/wiki/SyntaxHighlighter](http://alexgorbatchev.com/wiki/SyntaxHighlighter)
 
 ## Latest Info
