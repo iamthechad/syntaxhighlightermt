@@ -1,9 +1,12 @@
 [![Stories in Ready](https://badge.waffle.io/iamthechad/syntaxhighlightermt.png?label=ready&title=Ready)](https://waffle.io/iamthechad/syntaxhighlightermt)
+
 Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbatchev.com/wiki/SyntaxHighlighter](http://alexgorbatchev.com/wiki/SyntaxHighlighter)
 
 ## Latest Info
 
-* Added brushes for Pig and Hive QL.
+* Verified to work with Wordpress 3.9.
+* Updated docs to describe changing themes. ([GitHub Issue #2](https://github.com/iamthechad/syntaxhighlightermt/issues/2))
+* Properly serve assets over HTTPS as well as HTTP. ([GitHub Issue #1](https://github.com/iamthechad/syntaxhighlightermt/issues/1))
 
 ## Description
 
@@ -55,6 +58,19 @@ Available brushes are:
 
 ### Highlighting code
 The basic usage is: `<pre class="brush:brush_name">...code...</pre>` where `brush_name` is one of the available brushes.
+
+### Changing display themes
+
+The display theme can be changed by navigating to `Settings` -> `Syntax Highlighter MT`. The themes available are:
+
+* Default
+* Django
+* Eclipse
+* Emacs
+* FadeToGrey
+* MDUltra
+* Midnight
+* RDark
 
 ### Changing the appearance of code
 There are many options that can be applied inline to control how your formatted code is displayed. These are appended to the class definition after the brush declaration.
