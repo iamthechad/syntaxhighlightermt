@@ -19,10 +19,12 @@
 Plugin Name: Syntax Highlighter MT
 Plugin URI: http://www.megatome.com/syntaxhighlighter
 Description: Provides a simple way to use the Syntax Highlighter tool from <a href="http://alexgorbatchev.com/wiki/SyntaxHighlighter">http://alexgorbatchev.com/wiki/SyntaxHighlighter</a>
-Version: 2.2.3
+Version: 2.2.4
 Author: Chad Johnston
 Author URI: http://www.megatome.com
 */
+
+$mt_pluginVersion = '2.2.4';
 
 $themes = array(
     "Default" => "shThemeDefault.css",
@@ -41,64 +43,28 @@ function add_defaults_fn() {
     update_option('mtsh_plugin_options', $arr);
 }
 
-function mtsh_write_head()
+function mtsh_enqueue_scripts()
 {
     $options = get_option('mtsh_plugin_options');
     global $themes;
-    $x = WP_PLUGIN_URL . '/' . str_replace("/" . basename(__FILE__), "", plugin_basename(__FILE__));
-    echo "<script type='text/javascript' src='$x/scripts/shCore.js'></script>\n";
-    echo "<script type='text/javascript' src='$x/scripts/shAutoloader.js'></script>\n";
-    echo "";
-    echo "<link type='text/css' rel='stylesheet' href='$x/styles/shCore.css'/>\n";
+    global $mt_pluginVersion;
+    wp_enqueue_script( 'mt-shcore', plugins_url('scripts/shCore.js', __FILE__), array(), $mt_pluginVersion);
+    wp_enqueue_script( 'mt-shautoloader', plugins_url('scripts/shAutoloader.js', __FILE__), array('mt-shcore'), $mt_pluginVersion);
+
+    wp_enqueue_script( 'mt-brushtypes', plugins_url('brushTypes.js', __FILE__), array(), $mt_pluginVersion, true);
+    wp_localize_script( 'mt-brushtypes', 'MTBrushParams', array('baseUrl' => plugins_url('', __FILE__)) );
+
+    wp_enqueue_style( 'mt-shcore-style', plugins_url('styles/shCore.css', __FILE__), array(), $mt_pluginVersion);
     $selectedTheme = $themes['Default'];
     foreach ($themes as $k => $v) {
         if ($options['theme']== $k) {
             $selectedTheme = $v;
         }
     }
-    echo "<link type='text/css' rel='stylesheet' href='$x/styles/$selectedTheme'/>\n";
+    wp_enqueue_style( 'mt-theme-style', plugins_url("styles/$selectedTheme", __FILE__), array('mt-shcore-style'), $mt_pluginVersion);
 }
 
-add_action('wp_head', 'mtsh_write_head');
-
-function mtsh_write_footer()
-{
-    $x = WP_PLUGIN_URL . '/' . str_replace("/" . basename(__FILE__), "", plugin_basename(__FILE__));
-    echo "<script type='text/javascript'>\n";
-    echo "  SyntaxHighlighter.autoloader(
-      'applescript            $x/scripts/shBrushAppleScript.js',
-      'actionscript3 as3      $x/scripts/shBrushAS3.js',
-      'bash shell             $x/scripts/shBrushBash.js',
-      'coldfusion cf          $x/scripts/shBrushColdFusion.js',
-      'cpp c                  $x/scripts/shBrushCpp.js',
-      'c# c-sharp csharp      $x/scripts/shBrushCSharp.js',
-      'css                    $x/scripts/shBrushCss.js',
-      'delphi pascal          $x/scripts/shBrushDelphi.js',
-      'diff patch pas         $x/scripts/shBrushDiff.js',
-      'erl erlang             $x/scripts/shBrushErlang.js',
-      'groovy                 $x/scripts/shBrushGroovy.js',
-      'hive                   $x/scripts/shBrushHive.js',
-      'java                   $x/scripts/shBrushJava.js',
-      'jfx javafx             $x/scripts/shBrushJavaFX.js',
-      'js jscript javascript  $x/scripts/shBrushJScript.js',
-      'objc obj-c             $x/scripts/shBrushObjectiveC.js',
-      'perl pl                $x/scripts/shBrushPerl.js',
-      'php                    $x/scripts/shBrushPhp.js',
-      'pig                    $x/scripts/shBrushPig.js',
-      'text plain             $x/scripts/shBrushPlain.js',
-      'py python              $x/scripts/shBrushPython.js',
-      'ruby rails ror rb      $x/scripts/shBrushRuby.js',
-      'sass scss              $x/scripts/shBrushSass.js',
-      'scala                  $x/scripts/shBrushScala.js',
-      'sql                    $x/scripts/shBrushSql.js',
-      'vb vbnet               $x/scripts/shBrushVb.js',
-      'xml xhtml xslt html    $x/scripts/shBrushXml.js'
-       );\n";
-    echo "	SyntaxHighlighter.all();\n";
-    echo "</script>\n";
-}
-
-add_action('wp_footer', 'mtsh_write_footer');
+add_action( 'wp_enqueue_scripts', 'mtsh_enqueue_scripts' );
 
 add_action('admin_menu', 'mtsh_plugin_settings_page');
 function mtsh_plugin_settings_page()
