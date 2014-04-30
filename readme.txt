@@ -4,7 +4,7 @@ Donate link: http://www.megatome.com/syntaxhighlighter/
 Tags: highlight, code, syntax, code highlight
 Requires at least: 2.7.1
 Tested up to: 3.9.0
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 License: LGPLv3/MIT
 License URI: http://www.gnu.org/licenses/lgpl.html|http://opensource.org/licenses/MIT
 
@@ -48,6 +48,19 @@ xml xhtml xslt html`
 
 1. Unzip the `syntax-highlighter-mt` directory and upload it to `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
+
+== Changing display themes ==
+
+The display theme can be changed by navigating to `Settings` -> `Syntax Highlighter MT`. The themes available are:
+
+* Default
+* Django
+* Eclipse
+* Emacs
+* FadeToGrey
+* MDUltra
+* Midnight
+* RDark
 
 == Advanced Usage ==
 
@@ -139,6 +152,11 @@ There are several plugins already that are named Syntax Highlighter, or some var
 3. Styled Groovy code using the FadeToGrey theme.
 
 == Changelog ==
+
+= 2.2.4 =
+* Verified to work with Wordpress 3.9.
+* Updated docs to describe changing themes. ([GitHub Issue #2](https://github.com/iamthechad/syntaxhighlightermt/issues/2))
+* Properly serve assets over HTTPS as well as HTTP. ([GitHub Issue #1](https://github.com/iamthechad/syntaxhighlightermt/issues/1))
 
 = 2.2.3 =
 * Verified to work with Wordpress 3.8.
