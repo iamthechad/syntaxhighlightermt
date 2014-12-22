@@ -3,8 +3,8 @@ Contributors: iamthechad
 Donate link: http://www.megatome.com/syntaxhighlighter/
 Tags: highlight, code, syntax, code highlight
 Requires at least: 2.7.1
-Tested up to: 3.9.0
-Stable tag: 2.2.4
+Tested up to: 4.1.0
+Stable tag: 2.2.5
 License: LGPLv3/MIT
 License URI: http://www.gnu.org/licenses/lgpl.html|http://opensource.org/licenses/MIT
 
@@ -152,6 +152,9 @@ There are several plugins already that are named Syntax Highlighter, or some var
 3. Styled Groovy code using the FadeToGrey theme.
 
 == Changelog ==
+
+= 2.2.5 =
+* Verified to work with Wordpress 4.1.
 
 = 2.2.4 =
 * Verified to work with Wordpress 3.9.

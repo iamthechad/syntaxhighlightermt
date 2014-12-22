@@ -1,6 +1,6 @@
 <?php
 /*
-    Copyright (C) 2014  Megatome Technologies
+    Copyright (C) 2015  Megatome Technologies
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -19,12 +19,12 @@
 Plugin Name: Syntax Highlighter MT
 Plugin URI: http://www.megatome.com/syntaxhighlighter
 Description: Provides a simple way to use the Syntax Highlighter tool from <a href="http://alexgorbatchev.com/wiki/SyntaxHighlighter">http://alexgorbatchev.com/wiki/SyntaxHighlighter</a>
-Version: 2.2.4
+Version: 2.2.5
 Author: Chad Johnston
 Author URI: http://www.megatome.com
 */
 
-$mt_pluginVersion = '2.2.4';
+$mt_pluginVersion = '2.2.5';
 
 $themes = array(
     "Default" => "shThemeDefault.css",

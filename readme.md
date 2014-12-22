@@ -4,9 +4,7 @@ Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbat
 
 ## Latest Info
 
-* Verified to work with Wordpress 3.9.
-* Updated docs to describe changing themes. ([GitHub Issue #2](https://github.com/iamthechad/syntaxhighlightermt/issues/2))
-* Properly serve assets over HTTPS as well as HTTP. ([GitHub Issue #1](https://github.com/iamthechad/syntaxhighlightermt/issues/1))
+* Verified to work with Wordpress 4.1.
 
 ## Description
 
