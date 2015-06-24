@@ -1,4 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/iamthechad/syntaxhighlightermt.png?label=ready&title=Ready)](https://waffle.io/iamthechad/syntaxhighlightermt)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/b3441f83-877b-4039-9853-2ca7e4835aee/mini.png)](https://insight.sensiolabs.com/projects/b3441f83-877b-4039-9853-2ca7e4835aee)
 
 Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbatchev.com/wiki/SyntaxHighlighter](http://alexgorbatchev.com/wiki/SyntaxHighlighter)
 
