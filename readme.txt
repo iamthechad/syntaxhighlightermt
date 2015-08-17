@@ -3,7 +3,7 @@ Contributors: iamthechad
 Donate link: http://www.megatome.com/syntaxhighlighter/
 Tags: highlight, code, syntax, code highlight
 Requires at least: 2.7.1
-Tested up to: 4.1.0
+Tested up to: 4.3.0
 Stable tag: 2.2.5
 License: LGPLv3/MIT
 License URI: http://www.gnu.org/licenses/lgpl.html|http://opensource.org/licenses/MIT
