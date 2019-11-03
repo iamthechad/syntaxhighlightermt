@@ -1,7 +1,7 @@
-[![Stories in Ready](https://badge.waffle.io/iamthechad/syntaxhighlightermt.png?label=ready&title=Ready)](https://waffle.io/iamthechad/syntaxhighlightermt)
 ![Plugin Version](https://img.shields.io/wordpress/plugin/v/syntax-highlighter-mt.svg)
 ![Tested To](https://img.shields.io/wordpress/v/syntax-highlighter-mt.svg)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/b3441f83-877b-4039-9853-2ca7e4835aee/mini.png)](https://insight.sensiolabs.com/projects/b3441f83-877b-4039-9853-2ca7e4835aee)
+![Maintenance](https://img.shields.io/maintenance/yes/2015)
 
 Provides a simple way to use the Syntax Highlighter tool from [http://alexgorbatchev.com/wiki/SyntaxHighlighter](http://alexgorbatchev.com/wiki/SyntaxHighlighter)
 
